@@ -1,0 +1,13 @@
+apply plugin: "java-library"
+
+// as library sub-projects cannot provide a bootJar the regular jar task is needed, even though disabled by the
+// inherited SpringBoot plugin
+jar {
+    enabled = true
+}
+
+// library sub-projects do not specify a main-class even though inheriting the SpringBoot plugin. Named plugin
+// disables the bootJar task
+bootJar {
+    enabled = false
+}

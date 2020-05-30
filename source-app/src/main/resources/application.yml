@@ -1,0 +1,9 @@
+server:
+  port: 8006
+
+upload.path: /upload
+
+management:
+  endpoints:
+    web:
+      base-path: /actuator
