@@ -14,3 +14,7 @@ Data can be sent via REST client to source-app in below format:
             "id": "DocumentId123"
         }
 ```
+
+This project uses SpringBoot version 2.1.9.RELEASE and spring-cloud-stream-reactive dependency.
+
+The Spring cloud stream applications(Source/Processor/Sink) are created with @EnableBinding, @StreamListener, etc. 

@@ -5,14 +5,11 @@ buildscript {
         log4jVersion = "2.11.2"
         lombokPluginVersion = "5.0.0-rc6"
         rabbitMQStreamVersion = "2.2.0.RELEASE"
-        springBootVersion = "2.2.6.RELEASE"
-//        springBootVersion = "2.1.9.RELEASE"
+        springBootVersion = "2.1.9.RELEASE"
         snakeyamlVersion = "1.23"
         springWebfluxVersion = "2.1.6.RELEASE"
         springBootDependencyVersion = "1.0.6.RELEASE"
-//        springCloudStreamReactiveVersion = "2.2.0.RELEASE"
-        springCloudVersion = "Hoxton.SR3"
-        springCloudStreamVersion = "Horsham.SR3"
+        springCloudStreamReactiveVersion = "2.2.0.RELEASE"
     }
 
     repositories {
@@ -65,9 +62,7 @@ subprojects {
     }
 
     dependencies {
-//        implementation("org.springframework.cloud:spring-cloud-stream-reactive:${springCloudStreamReactiveVersion}")
-        implementation(platform("org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"))
-        implementation(platform("org.springframework.cloud:spring-cloud-stream-dependencies:${springCloudStreamVersion}"))
+        implementation("org.springframework.cloud:spring-cloud-stream-reactive:${springCloudStreamReactiveVersion}")
 
         implementation("org.springframework.boot:spring-boot-starter-jetty")
         implementation("org.springframework.boot:spring-boot-starter-actuator")

@@ -16,20 +16,17 @@ public class ProcessorController {
 
 
     /**
-     * Spring cloud data flow Processor to split sentences present in the passed
-     * document
+     * Spring cloud data flow Processor to convert pipelineDocument content to upper case
      *
      * @param pipelineDocument The reactive data type Flux&lt;PipelineDocument&gt;
      *     received from the source or processor from the Spring
      *     cloud data pipeline
-     * @return A reactive data type Flux&lt;PipelineDocument&gt; containing multiple
-     *     instances of PipelineDocument obtained after splitting single
-     *     PipelineDocument
+     * @return A reactive data type Flux&lt;PipelineDocument&gt;
      */
     @StreamListener(INPUT)
     @SendTo(OUTPUT)
     public Flux<PipelineDocument> receive(Flux<PipelineDocument> pipelineDocument) {
-        // Purposefully removed implementation just to keep it simple
-        return pipelineDocument.log();
+        // Just converts pipelineDocument content to upper case
+        return pipelineDocument.map(p -> p.setContent(p.getContent().toUpperCase())).log();
     }
 }

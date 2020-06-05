@@ -14,8 +14,7 @@ import reactor.core.publisher.Flux;
 public class SinkController {
 
     /**
-     * Extracts the StorageDocuments from PipelineDocuments, adds NER tags and then
-     * wrap it in RestUploadDocument and send the document to be stored in DB
+     * Logs the received pipelineDocument
      *
      * @param pipelineDocument The reactive data type Flux&lt;PipelineDocument&gt;
      *                         received from the source or processor from the Spring
